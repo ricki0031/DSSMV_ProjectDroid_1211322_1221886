@@ -1,0 +1,53 @@
+@startuml
+'https://plantuml.com/class-diagram
+hide circle
+skinparam classAttributeIconSize 0
+
+title Diagrama de Classes US01- Iniciar sessão
+
+
+
+
+class HTTPClient {
+}
+
+class RouteHandler {
+    + handleRequest(data: json): HttpResult
+}
+
+class AuthorController {
+    + registerAuthor(String name, String biography): Author
+    + create(int status, JSON body)
+}
+
+class AuthorService {
+    + create(String name, String biography): Author
+}
+
+interface AuthorRepository <<interface>> {
+    + create(String name, String biography): String authorID
+}
+
+class Author {
+    - name
+    - biography
+    - authorID
+    Author(String name, String biography, String authorID)
+}
+
+class HttpResult {
+    - status: int
+    - body: json
+}
+
+
+HTTPClient --> RouteHandler
+RouteHandler --> AuthorController
+AuthorController --> AuthorService
+AuthorService --> AuthorRepository
+AuthorRepository -right> Author
+
+AuthorController -right-> HttpResult
+
+
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autoactivate on
+autonumber
+
+title Sequence Diagram of the registration of a author by an librarian
+
+participant "Author:HTTPClient" as User
+participant "handler:RouteHandler" as System
+participant ":AuthorController" as Ctrl
+participant "service:AuthorService" as Service
+participant "authorRepo:AuthorRepository" as Repo
+participant "authorMapper:AuthorViewMapper" as Mapper
+participant "author:Author" as Author
+participant "result:HttpResult" as Result
+
+activate User
+
+User -> System: POST /register(data)
+System -> Ctrl: registerAuthor(name, biography)
+
+Ctrl -> Ctrl: getVersionFromIfMatchHeader(ifMatchHeader)
+Ctrl --> Ctrl: ok
+
+Ctrl -> Service: create(name, biography)
+Service -> Repo: create(name, biography)
+Repo --> Service: authorID
+
+Service --> Author**: create(name, biography, authorID)
+Service --> Ctrl: author
+
+Ctrl -> Mapper: toAuthorMapper(author)
+Mapper --> Ctrl: authorView
+
+Ctrl -> Result**: create(201, author)
+Ctrl --> System: result
+
+System -> System: setHttpResult(resp, result)
+System --> User: resp
+
+
+@enduml
