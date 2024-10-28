@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
+hide circle
+hide methods
+
+class Autor {
+  ID
+  Pseudônimos
+  Biografia
+  Data de Nascimento
+  Data da Morte
+}
+
+class Livros {
+  ISBN
+  Autor
+  Título
+  Descrição
+  Temas
+  Nome dos Personagens
+  Época da História
+  Locais onde se passa a história
+  Data de Publicação
+  Número de páginas
+  Autoria
+  Imagem (JPG)
+  Reserva
+}
+
+class Cliente {
+}
+
+class Conta {
+  UserID
+}
+
+class Biblioteca {
+  ID
+  Nome
+  Endereço
+  Horário de Abertura
+  Horário de Fecho
+  Dias da Semana Abertos
+  Horário
+  Estado
+}
+
+class Stock {
+  Livros Stock
+}
+
+Autor "1" -- "0..*" Livros : Escreve
+Cliente "1" -- "1" Conta : Inicia sessão
+Cliente "1" -- "0..*" Biblioteca : Escolhe
+Cliente "0..*" -- "0..*" Livros : Vê
+Cliente "0..*" -- "0..*" Biblioteca : Requisita/Avalia/Vê
+Livros "0..*" -- "1" Stock
+Biblioteca "1" -- "0..*" Stock
+Livros "1" -- "0..*" Biblioteca : Escolhe
+
+@enduml
