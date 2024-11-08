@@ -81,10 +81,10 @@ public class MainActivity extends AppCompatActivity {
                 if (userId != null && !userId.isEmpty()) {
                     utiliAtual = userId;
                 } else {
-                    utiliAtual = "NONE";
+                    utiliAtual = "Anónimo";
                 }
             } else if (resultCode == RESULT_CANCELED) {
-                utiliAtual = "NONE";
+                utiliAtual = "Anónimo";
             }
         } else if (requestCode == REQUEST_CODE_BIBLIOTECA) {  // THIS IS RELATED TO BiblitecaActivity
             if (resultCode == RESULT_OK) {
@@ -95,11 +95,11 @@ public class MainActivity extends AppCompatActivity {
                     biblioAtualNome = nomeBiblioteca;
                     biblioAtualId = idBiblioteca;
                 } else {
-                    biblioAtualNome = "NONE";
+                    biblioAtualNome = "---";
                     biblioAtualId = "";
                 }
             } else if (resultCode == RESULT_CANCELED) {
-                biblioAtualNome = "NONE";
+                biblioAtualNome = "---";
                 biblioAtualId = "";
             }
         }
