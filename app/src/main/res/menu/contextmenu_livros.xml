@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/descricao"
+            android:title="Descrição do livro"/>
+    <item
+            android:id="@+id/requisicao"
+            android:title="Requisitar o livro"/>
+    <item
+            android:id="@+id/critica"
+            android:title="Fazer uma crítica"/>
+    <item
+            android:id="@+id/criticas"
+            android:title="Ver críticas do livro"/>
+</menu>
