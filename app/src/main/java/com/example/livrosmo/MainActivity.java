@@ -11,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_USER = 1;
     private static final int REQUEST_CODE_BIBLIOTECA = 2;
-    String utiliAtual = "NONE";
-    String biblioAtualNome = "NONE";
+    String utiliAtual = "";
+    String biblioAtualNome = "";
     String biblioAtualId = "";
 
     public String getUtiliAtual() {
@@ -81,10 +81,10 @@ public class MainActivity extends AppCompatActivity {
                 if (userId != null && !userId.isEmpty()) {
                     utiliAtual = userId;
                 } else {
-                    utiliAtual = "Anónimo";
+                    utiliAtual = "";
                 }
             } else if (resultCode == RESULT_CANCELED) {
-                utiliAtual = "Anónimo";
+                utiliAtual = "";
             }
         } else if (requestCode == REQUEST_CODE_BIBLIOTECA) {  // THIS IS RELATED TO BiblitecaActivity
             if (resultCode == RESULT_OK) {
@@ -95,11 +95,11 @@ public class MainActivity extends AppCompatActivity {
                     biblioAtualNome = nomeBiblioteca;
                     biblioAtualId = idBiblioteca;
                 } else {
-                    biblioAtualNome = "---";
+                    biblioAtualNome = "";
                     biblioAtualId = "";
                 }
             } else if (resultCode == RESULT_CANCELED) {
-                biblioAtualNome = "---";
+                biblioAtualNome = "";
                 biblioAtualId = "";
             }
         }
