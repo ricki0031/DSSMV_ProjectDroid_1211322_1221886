@@ -1,18 +1,18 @@
 package com.example.livrosmo;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_USER = 1;
     private static final int REQUEST_CODE_BIBLIOTECA = 2;
-    String utiliAtual = "";
-    String biblioAtualNome = "";
+    String utiliAtual = "NONE";
+    String biblioAtualNome = "NONE";
     String biblioAtualId = "";
 
     public String getUtiliAtual() {
@@ -59,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button livrosRequi = findViewById(R.id.button5);
+        livrosRequi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainToReq = new Intent(MainActivity.this, RequisicoesActivity.class);
+                mainToReq.putExtra("idUtilizador", utiliAtual);
+                startActivity(mainToReq);
+            }
+        });
 
         Button peqsquisa = findViewById(R.id.button6);
         peqsquisa.setOnClickListener(new View.OnClickListener() {
@@ -81,10 +90,10 @@ public class MainActivity extends AppCompatActivity {
                 if (userId != null && !userId.isEmpty()) {
                     utiliAtual = userId;
                 } else {
-                    utiliAtual = "";
+                    utiliAtual = "NONE";
                 }
             } else if (resultCode == RESULT_CANCELED) {
-                utiliAtual = "";
+                utiliAtual = "NONE";
             }
         } else if (requestCode == REQUEST_CODE_BIBLIOTECA) {  // THIS IS RELATED TO BiblitecaActivity
             if (resultCode == RESULT_OK) {
@@ -95,11 +104,11 @@ public class MainActivity extends AppCompatActivity {
                     biblioAtualNome = nomeBiblioteca;
                     biblioAtualId = idBiblioteca;
                 } else {
-                    biblioAtualNome = "";
+                    biblioAtualNome = "NONE";
                     biblioAtualId = "";
                 }
             } else if (resultCode == RESULT_CANCELED) {
-                biblioAtualNome = "";
+                biblioAtualNome = "NONE";
                 biblioAtualId = "";
             }
         }

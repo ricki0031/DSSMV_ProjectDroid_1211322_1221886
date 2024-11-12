@@ -18,5 +18,22 @@ public class PesquisaActivity extends AppCompatActivity {
         Button pesquisar = (Button) findViewById(R.id.button13);
         Button cancelar = (Button) findViewById(R.id.button14);
         EditText searchEditText = (EditText) findViewById(R.id.editTextText3);
+
+        pesquisar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String search = searchEditText.getText().toString().trim();
+                Intent intent= new Intent(PesquisaActivity.this, ResultadosPesquisaActivity.class);
+                intent.putExtra("pesquisa", search);
+                startActivity(intent);
+            }
+        });
+
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/pedidoIdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Identificação do pedido"/>
+    <TextView
+            android:id="@+id/UserIdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome do Utilizador"/>
+    <TextView
+            android:id="@+id/activeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library Name"/>
+    <TextView
+            android:id="@+id/createTimestampTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library Name"/>
+    <TextView
+            android:id="@+id/updateTimestampTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library Name"/>
+    <TextView
+            android:id="@+id/dueDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library Name"/>
+
+    <TextView
+            android:id="@+id/libraryNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library Name"/>
+    <TextView
+            android:id="@+id/libraryAddressTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library Address"/>
+    <TextView
+            android:id="@+id/libraryOpenTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library open time"/>
+    <TextView
+            android:id="@+id/libraryCloseTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library close time"/>
+    <TextView
+            android:id="@+id/bookTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book Title"/>
+    <TextView
+            android:id="@+id/bookIsbnTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book Isbn"/>
+
+
+</LinearLayout>

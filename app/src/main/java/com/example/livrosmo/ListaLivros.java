@@ -1,7 +1,6 @@
 package com.example.livrosmo;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -19,10 +18,10 @@ public class ListaLivros extends RecyclerView.Adapter<ListaLivros.LivrosViewHold
     }
     @NonNull
     @Override
-    public ListaLivros.LivrosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LivrosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_livro, parent, false);
-        return new ListaLivros.LivrosViewHolder(itemView);
+        return new LivrosViewHolder(itemView);
     }
 
     @Override

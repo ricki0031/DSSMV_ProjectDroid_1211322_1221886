@@ -1,11 +1,10 @@
 package com.example.livrosmo;
 
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -60,7 +59,7 @@ public class DetalhesLivroActivity extends AppCompatActivity {
 
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(getResources().getColor(R.color.black), 4));
 
-        DetalhesLivroActivity.DetalhesLivro sampleDetalhesLivro = new DetalhesLivroActivity.DetalhesLivro();
+        DetalhesLivro sampleDetalhesLivro = new DetalhesLivro();
         sampleDetalhesLivro.setTitle(title);
         sampleDetalhesLivro.setByStatement("By " + authors);
         sampleDetalhesLivro.setPublishDate(publishDate);

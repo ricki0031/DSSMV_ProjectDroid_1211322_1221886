@@ -5,7 +5,10 @@ package com.example.livrosmo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.*;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,10 +18,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
-import android.view.View;
+import retrofit2.http.Path;
+
 import java.util.ArrayList;
 import java.util.List;
-import retrofit2.http.Path;
 
 
 public class LivrosActivity extends AppCompatActivity {
@@ -120,5 +123,39 @@ public class LivrosActivity extends AppCompatActivity {
         menu.setHeaderTitle("Seleciona uma opção");
     }
 
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        int position = ((ListaLivros) recyclerView.getAdapter()).getSelectedItemPosition();
+        if (position != RecyclerView.NO_POSITION) {
+            Livro livro = adapter.livros.get(position);
+            int itemId = item.getItemId();
+            if (itemId == R.id.critica) {
+                Intent livToCrit = new Intent(LivrosActivity.this, CriticaActivity.class);
+                livToCrit.putExtra("idUtili", idUtili);
+                livToCrit.putExtra("isbn", livro.getIsbn());
+                startActivity(livToCrit);
+            } else if (itemId == R.id.descricao) {
+                Intent livToDet = new Intent(LivrosActivity.this, DetalhesLivroActivity.class);
+                livToDet.putExtra("title", livro.getTitle());
+                livToDet.putExtra("authors", livro.getBookByStatement().substring(3));
+                livToDet.putExtra("Description", livro.getBookDescription());
+                livToDet.putExtra("numberOfPages", livro.getNumberOfPages());
+                livToDet.putExtra("publishDate", livro.getBookPublishDate());
+                startActivity(livToDet);
+            } else if (itemId == R.id.requisicao) {
+                Intent livToReq = new Intent(LivrosActivity.this, RequisicaoActivity.class);
+                livToReq.putExtra("idUtili", idUtili);
+                livToReq.putExtra("isbn", livro.getIsbn());
+                livToReq.putExtra("title", livro.getTitle());
+                livToReq.putExtra("libraryId", idBiblio);
+                startActivity(livToReq);
+            } else if (itemId == R.id.criticas) {
+                Intent livToCrits = new Intent(LivrosActivity.this, CriticasActivity.class);
+                livToCrits.putExtra("isbn", livro.getIsbn());
+                startActivity(livToCrits);
+            }
+        }
+        return super.onContextItemSelected(item);
+    }
 
 }

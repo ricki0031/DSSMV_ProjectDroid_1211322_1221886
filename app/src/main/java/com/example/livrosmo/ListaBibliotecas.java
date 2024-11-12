@@ -20,14 +20,14 @@ public class ListaBibliotecas extends RecyclerView.Adapter<ListaBibliotecas.Bibl
 
     @NonNull
     @Override
-    public ListaBibliotecas.BibliotecaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BibliotecaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_biblioteca, parent, false);
-        return new ListaBibliotecas.BibliotecaViewHolder(itemView);
+        return new BibliotecaViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull ListaBibliotecas.BibliotecaViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull @NotNull BibliotecaViewHolder holder, int position) {
         BibliotecaActivity.Biblioteca biblioteca = bibliotecas.get(position);
         holder.bibliotecaNameTextView.setText(biblioteca.getName() != null ? biblioteca.getName() : "Biblioteca não disponível");
         holder.itemView.setActivated(selectedItemPosition == position);

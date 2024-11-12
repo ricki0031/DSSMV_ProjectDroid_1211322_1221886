@@ -49,7 +49,7 @@ public class BibliotecaActivity extends AppCompatActivity {
 
     public interface BibliotecaService {
         @GET("/v1/library/")
-        Call<List<BibliotecaActivity.Biblioteca>> getLibraries();
+        Call<List<Biblioteca>> getLibraries();
     }
 
     public void fetchLibraries() {
@@ -57,14 +57,14 @@ public class BibliotecaActivity extends AppCompatActivity {
                 .baseUrl("http://193.136.62.24/v1/library/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        BibliotecaActivity.BibliotecaService service = retrofit.create(BibliotecaActivity.BibliotecaService.class);
+        BibliotecaService service = retrofit.create(BibliotecaService.class);
 
-        Call<List<BibliotecaActivity.Biblioteca>> call = service.getLibraries();
-        call.enqueue(new Callback<List<BibliotecaActivity.Biblioteca>>() {
+        Call<List<Biblioteca>> call = service.getLibraries();
+        call.enqueue(new Callback<List<Biblioteca>>() {
             @Override
-            public void onResponse(Call<List<BibliotecaActivity.Biblioteca>> call, Response<List<BibliotecaActivity.Biblioteca>> response) {
+            public void onResponse(Call<List<Biblioteca>> call, Response<List<Biblioteca>> response) {
                 if (response.isSuccessful()) {
-                    List<BibliotecaActivity.Biblioteca> bibliotecas = response.body();
+                    List<Biblioteca> bibliotecas = response.body();
                     if (bibliotecas != null && !bibliotecas.isEmpty()) {
                         adapter = new ListaBibliotecas(bibliotecas);
                         recyclerView.setAdapter(adapter);
@@ -77,7 +77,7 @@ public class BibliotecaActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<BibliotecaActivity.Biblioteca>> call, Throwable t) {
+            public void onFailure(Call<List<Biblioteca>> call, Throwable t) {
                 Log.e("Bibliotecas", "Library Request failed: " + t.getMessage());
             }
         });
@@ -95,7 +95,7 @@ public class BibliotecaActivity extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         int position = ((ListaBibliotecas) recyclerView.getAdapter()).getSelectedItemPosition();
         if (position != RecyclerView.NO_POSITION) {
-            BibliotecaActivity.Biblioteca biblioteca = adapter.bibliotecas.get(position);
+            Biblioteca biblioteca = adapter.bibliotecas.get(position);
             int itemId = item.getItemId();
             if (itemId == R.id.biblioSeleci) { //ao selecionar biblio, retrieve position and retrieve biblioteca name and id to send to MainActivity
                 String nomeBiblio = biblioteca.getName();
