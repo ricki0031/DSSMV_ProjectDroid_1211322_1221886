@@ -4,16 +4,23 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView6"
             android:layout_width="match_parent"
-            android:layout_height="658dp"
-            android:padding="8dp"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+
     <Button
-            android:text="Sair"
+            android:id="@+id/button"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sair"
             android:textSize="20sp"
-            android:layout_height="58dp"
-            android:id="@+id/button"/>
+            android:layout_marginTop="8dp" />
+
 </LinearLayout>

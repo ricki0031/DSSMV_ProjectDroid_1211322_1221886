@@ -5,15 +5,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView5"
             android:layout_width="match_parent"
             android:layout_height="658dp"
-            android:padding="8dp"/>
+            android:padding="8dp" />
+
     <Button
             android:text="Sair"
             android:layout_width="match_parent"
             android:textSize="20sp"
             android:layout_height="58dp"
-            android:id="@+id/button15"/>
+            android:id="@+id/button15"
+            android:layout_marginTop="16dp" /> <!-- Margem superior para espaçamento entre o RecyclerView e o botão -->
+
 </LinearLayout>
