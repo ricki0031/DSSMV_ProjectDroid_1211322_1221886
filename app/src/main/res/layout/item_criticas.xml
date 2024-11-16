@@ -3,36 +3,48 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
     <TextView
             android:id="@+id/reviewIdTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Identificação da crítica"/>
+            android:text="Identificação da crítica"
+            android:layout_marginBottom="4dp"/>
+
     <TextView
             android:id="@+id/reviewerTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome do crítico"/>
+            android:text="Nome do crítico"
+            android:layout_marginBottom="4dp"/>
+
     <TextView
             android:id="@+id/isbnTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Isbn"/>
+            android:text="Isbn"
+            android:layout_marginBottom="4dp"/>
+
     <TextView
             android:id="@+id/recommendedTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recomendado"/>
+            android:text="Recomendado"
+            android:layout_marginBottom="4dp"/>
+
     <TextView
             android:id="@+id/reviewTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crítica"/>
+            android:text="Crítica"
+            android:layout_marginBottom="4dp"/>
+
     <TextView
             android:id="@+id/createdDateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data de criação"/>
+            android:text="Data de criação"
+            android:layout_marginBottom="4dp"/>
 </LinearLayout>

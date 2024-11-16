@@ -34,11 +34,24 @@
         </activity>
         <activity
                 android:name=".DetalhesLivroActivity">
-
+        </activity>
+        <activity
+                android:name=".CriticaActivity">
+        </activity>
+        <activity
+                android:name=".RequisicaoActivity">
+        </activity>
+        <activity
+                android:name=".RequisicoesActivity">
+        </activity>
+        <activity
+                android:name=".CriticasActivity">
         </activity>
         <activity
                 android:name=".PesquisaActivity">
-
+        </activity>
+        <activity
+                android:name=".ResultadosPesquisaActivity">
         </activity>
     </application>
 

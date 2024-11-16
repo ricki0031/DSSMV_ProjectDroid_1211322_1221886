@@ -4,20 +4,22 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView5"
             android:layout_width="match_parent"
-            android:layout_height="658dp"
-            android:padding="8dp" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"/>
 
     <Button
+            android:id="@+id/button15"
             android:text="Sair"
             android:layout_width="match_parent"
-            android:textSize="20sp"
             android:layout_height="58dp"
-            android:id="@+id/button15"
-            android:layout_marginTop="16dp" /> <!-- Margem superior para espaçamento entre o RecyclerView e o botão -->
-
+            android:textSize="20sp"/>
 </LinearLayout>

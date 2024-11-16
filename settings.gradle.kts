@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Livros à Mão"
 include(":app")
- 
+include(":app")

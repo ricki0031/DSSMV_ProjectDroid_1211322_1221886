@@ -3,31 +3,46 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
     <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Título"/>
+            android:text="Título"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
     <TextView
             android:id="@+id/authorNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Autor"/>
+            android:text="Autor"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
     <TextView
             android:id="@+id/publishDateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data da publicação"/>
+            android:text="Data da publicação"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
     <TextView
-        android:id="@+id/numberOfPagesTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Número de páginas"/>
+            android:id="@+id/numberOfPagesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número de páginas"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
     <TextView
             android:id="@+id/descriptionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descrição"/>
+            android:text="Descrição"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
 </LinearLayout>
