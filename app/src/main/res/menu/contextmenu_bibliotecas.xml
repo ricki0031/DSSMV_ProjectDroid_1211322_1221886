@@ -2,5 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
             android:id="@+id/biblioSeleci"
-            android:title="Selecionar biblioteca"/>
+            android:title="Selecionar biblioteca" />
+    <item
+            android:id="@+id/biblioRemover"
+            android:title="Remover biblioteca" />
 </menu>

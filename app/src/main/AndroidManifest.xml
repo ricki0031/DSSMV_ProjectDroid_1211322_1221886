@@ -53,6 +53,9 @@
         <activity
                 android:name=".ResultadosPesquisaActivity">
         </activity>
+
+        <activity android:name=".CreateLibraryActivity" />
+
     </application>
 
 </manifest>
