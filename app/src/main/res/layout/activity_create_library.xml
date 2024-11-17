@@ -10,31 +10,36 @@
             android:id="@+id/editName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome da Biblioteca" />
+            android:hint="Nome da Biblioteca"
+            android:layout_marginBottom="8dp" />
 
     <EditText
             android:id="@+id/editAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Endereço" />
+            android:hint="Endereço"
+            android:layout_marginBottom="8dp" />
 
     <EditText
             android:id="@+id/editOpenDays"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Dias de Funcionamento" />
+            android:hint="Dias de Funcionamento"
+            android:layout_marginBottom="8dp" />
 
     <EditText
             android:id="@+id/editOpenTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Hora de Abertura (HH:MM)" />
+            android:hint="Hora de Abertura (HH:MM)"
+            android:layout_marginBottom="8dp" />
 
     <EditText
             android:id="@+id/editCloseTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Hora de Fechamento (HH:MM)" />
+            android:hint="Hora de Fechamento (HH:MM)"
+            android:layout_marginBottom="32dp" />
 
     <Button
             android:id="@+id/btnCreateLibrary"

@@ -7,58 +7,58 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <!-- Texto principal -->
     <TextView
             android:id="@+id/textView12"
-            android:text=""
-            android:textSize="20sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="200dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            app:layout_constraintHorizontal_bias="0.5" />
+            android:layout_marginTop="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
 
+    <!-- Texto adicional -->
     <TextView
             android:id="@+id/textView13"
-            android:text=""
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp" />
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
 
     <Button
             android:id="@+id/button11"
-            android:text="Confirmar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="Confirmar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button12"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="84dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintVertical_bias="1.0"/>
-
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="136dp"/>
     <Button
             android:id="@+id/button12"
-            android:text="Cancelar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="Cancelar"
             app:layout_constraintStart_toEndOf="@+id/button11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="84dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintVertical_bias="1.0"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="136dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
