@@ -58,6 +58,7 @@ public class CreateLibraryActivity extends AppCompatActivity {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(CreateLibraryActivity.this, "Biblioteca criada com sucesso!", Toast.LENGTH_SHORT).show();
+                    setResult(RESULT_OK);
                     finish();
                 } else {
                     Log.e("CreateLibrary", "Erro ao criar biblioteca: " + response.message());

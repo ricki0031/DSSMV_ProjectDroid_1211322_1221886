@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,8 +24,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public class BibliotecaActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -61,11 +60,19 @@ public class BibliotecaActivity extends AppCompatActivity {
         Button createLibraryButton = findViewById(R.id.createLibraryButton);
         createLibraryButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, CreateLibraryActivity.class);
-            startActivity(intent); // Inicia a atividade para criar uma nova biblioteca
+            startActivityForResult(intent, 1); // Inicia atividade e espera um resultado
         });
 
         // Buscar bibliotecas do servidor
         fetchLibraries();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            fetchLibraries();
+        }
     }
 
     // Interface Retrofit para chamadas de API
@@ -83,7 +90,7 @@ public class BibliotecaActivity extends AppCompatActivity {
 
     public void fetchLibraries() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://193.136.62.24/v1/library/")
+                .baseUrl("http://193.136.62.24")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         BibliotecaService service = retrofit.create(BibliotecaService.class);
@@ -146,7 +153,7 @@ public class BibliotecaActivity extends AppCompatActivity {
     // Remover biblioteca do servidor e da interface
     private void removeLibrary(String id, int position) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://193.136.62.24/v1/library/")
+                .baseUrl("http://193.136.62.24")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         BibliotecaService service = retrofit.create(BibliotecaService.class);
